@@ -10,8 +10,8 @@
 using namespace std;
 
 //Definición de variables globales.
-char gaTickets[10][6][50];
-
+string gaTickets[10][6];
+	
 //Función de número y letras.
 string random(char lcTipo, int lnMax){
 	//Definición de variables. 
@@ -38,27 +38,23 @@ int AbrirTicket(int lnNumTicket){
 	
 	cout << " Nombre:  ";
 	cin.ignore();
-	cin.getline(gaTickets[lnNumTicket][0],50);
+	cin.clear();
+	getline(cin, gaTickets[lnNumTicket][0]);
 	
 	cout << " Apellido:  ";
-	cin.ignore();
-	cin.getline(gaTickets[lnNumTicket][1],50);
+	getline(cin, gaTickets[lnNumTicket][1]);
 	
 	cout << " ID:  ";
-	cin.ignore();
-	cin.getline(gaTickets[lnNumTicket][2],50);
+	getline(cin, gaTickets[lnNumTicket][2]);
 	
 	cout << " Email:  ";
-	cin.ignore();
-	cin.getline(gaTickets[lnNumTicket][3],50);
+	getline(cin, gaTickets[lnNumTicket][3]);
 	
 	cout << " Carrera:  ";
-	cin.ignore();
-	cin.getline(gaTickets[lnNumTicket][4],50);
+	getline(cin, gaTickets[lnNumTicket][4]);
 
 	cout << " Ingrese su ticket:  ";
-	cin.ignore();
-	cin.getline(gaTickets[lnNumTicket][5],50);
+	getline(cin, gaTickets[lnNumTicket][5]);
 
 	cout << endl << endl << endl;
 	cout << " ¡Ticket ingresado correctamente! " << endl;
@@ -82,18 +78,20 @@ int VerTickets(int lnNumTicket){
 	cout << endl << endl;
 	cout << " ¡Bienvenido al reporte de tickets! " << endl << endl;
 	cout << " Tickets creados: " << lnNumTicket << endl << endl;
-	cout << " _______________________________________________________" << endl;
-	
+	cout << " No.| Nombre             | Apellido           | ID                 | Email              | Carrera            | Ticket             |" << endl;
+	cout << " __________________________________________________________________________________________________________________________________ " << endl;
+	cout << endl;
 	for (lnCount = 0; lnCount < lnNumTicket; lnCount++){
-		cout << " No. Ticket: " << lnCount + 1 << endl;
-		cout << " Nombre:     " << gaTickets[lnCount][0] << endl;
-		cout << " Apellido:   " << gaTickets[lnCount][1] << endl;
-		cout << " ID:         " << gaTickets[lnCount][2] << endl;
-		cout << " Email:      " << gaTickets[lnCount][3] << endl;
-		cout << " Carrera:    " << gaTickets[lnCount][4] << endl;
-		cout << " Ticket:     " << gaTickets[lnCount][5] << endl;
-		cout << " _______________________________________________________" << endl;
+		cout << " " << lnCount + 1 << "  |";
+		printf("%-20s|", gaTickets[lnCount][0].c_str());
+		printf("%-20s|", gaTickets[lnCount][1].c_str());
+		printf("%-20s|", gaTickets[lnCount][2].c_str());
+		printf("%-20s|", gaTickets[lnCount][3].c_str());
+		printf("%-20s|", gaTickets[lnCount][4].c_str());
+		printf("%-20s|", gaTickets[lnCount][5].c_str());
+		cout << endl;
 	}
+	cout << " __________________________________________________________________________________________________________________________________ " << endl;
 	cout << endl << endl;
 	cout << "          Presione cualquier tecla para continuar...";
 	_getch();
@@ -101,6 +99,7 @@ int VerTickets(int lnNumTicket){
 	return 0;
 }
 
+//Función normal.
 int main(){
 	//Permite imprimir tildes, ñ o caracteres especiales. 
 	setlocale(LC_ALL, "");
