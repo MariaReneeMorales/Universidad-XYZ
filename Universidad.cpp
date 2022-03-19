@@ -104,6 +104,11 @@ int main(){
 	//Permite imprimir tildes, ñ o caracteres especiales. 
 	setlocale(LC_ALL, "");
 	
+	//Definición de variables.
+	string lcOpcion, lcUser, lcPass, lcClave;
+	int lnCount, lnOpcion, lnTickets;
+	time_t ldFecha = time(NULL);
+	
 	//Título.
 	cout << endl << endl;
 	cout << "          U N I V E R S I D A D  X Y Z";
