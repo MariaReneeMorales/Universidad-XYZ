@@ -109,10 +109,51 @@ int main(){
 	int lnCount, lnOpcion, lnTickets;
 	time_t ldFecha = time(NULL);
 	
+	//Ciclo.
+	do{
 	//TÃ­tulo.
 	cout << endl << endl;
 	cout << "          U N I V E R S I D A D  X Y Z";
 	cout << endl << endl;
 	
+		//Captura y lectura de datos.
+		cout << "— Instrucciones: marqué 1 = si y 0 = no " << endl << endl;
+		cout << " ¿Mantiene una matrícula activa? ";
+		cin >> lcOpcion;
+		cout << endl << endl;
+
+		//Condición.
+		if (lcOpcion == "1"  || lcOpcion == "si" || lcOpcion == "Si"){
+			lcUser = random('A', 26);
+			lcPass = random('1', 9);
+
+			//Mostrando datos del usuario.
+			cout << " Sus credenciales son: " << endl << endl;
+			cout << "      Usuario: " << lcUser << endl;
+			cout << "      Clave: " << lcPass << endl << endl;
+
+			//Capturando clave otorgada.
+			cout << " Ingrese su clave:  ";
+			cin >> lcClave;
+
+			//Ingreso al sistema de tickets.
+			if (lcClave == lcPass){
+				//Limpiando pantalla + Título + DateTime.
+				system("cls");
+				cout << endl;
+				cout << "          ¡B I E N V E N I D O " << lcUser << "!" << endl << endl << endl;
+			    printf(" Fecha y hora de ingreso: %s", ctime(&ldFecha));
+				cout << endl << endl;
+
+				//Solicitando cambio de contraseña + Opciones.
+				cout << " Por seguridad, cambie su clave: ";
+				cin >> lcPass;
+				cout << endl << endl;
+				cout << "          ¡Su clave fue cambiada éxitosamente! " << endl << endl << endl;
+				cout << " ¿Qué desea hacer?" << endl << endl;
+
+				//Inicializando variable.
+				lnTickets = 0;
+
 	return 0;
 }
