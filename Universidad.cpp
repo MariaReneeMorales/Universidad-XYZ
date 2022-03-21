@@ -96,6 +96,9 @@ int VerTickets(int lnNumTicket){
 	cout << endl << endl;
 	cout << "          Presione cualquier tecla para continuar...";
 	_getch();
+	
+	return 0;
+}
 
 int main(){
 	//Permite imprimir tildes, Ã± o caracteres especiales. 
