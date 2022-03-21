@@ -78,21 +78,20 @@ int VerTickets(int lnNumTicket){
 	cout << endl << endl;
 	cout << " ¡Bienvenido al reporte de tickets! " << endl << endl;
 	cout << " Tickets creados: " << lnNumTicket << endl << endl;
-	cout << " No.| Nombre             | Apellido           | ID                 | Email              | Carrera                                          | Ticket                                           |" << endl;
-	cout << " ______________________________________________________________________________________________________________________________________________________________________________________________" << endl;
+	cout << " No.| Nombre             | Apellido           | ID                 | Email                        | Carrera                      | Ticket                                                          |" << endl;
+	cout << " ___________________________________________________________________________________________________________________________________________________________________________________________________" << endl;
 	cout << endl;
 	for (lnCount = 0; lnCount < lnNumTicket; lnCount++){
 		cout << " " << lnCount + 1 << "  |";
 		printf("%-20s|", gaTickets[lnCount][0].c_str());
 		printf("%-20s|", gaTickets[lnCount][1].c_str());
 		printf("%-20s|", gaTickets[lnCount][2].c_str());
-		printf("%-20s|", gaTickets[lnCount][3].c_str());
-		printf("%-50s|", gaTickets[lnCount][4].c_str());
-		printf("%-50s|", gaTickets[lnCount][5].c_str());
+		printf("%-30s|", gaTickets[lnCount][3].c_str());
+		printf("%-30s|", gaTickets[lnCount][4].c_str());
+		printf("%-65s|", gaTickets[lnCount][5].c_str());
 		cout << endl;
 	}
-	cout << " ______________________________________________________________________________________________________________________________________________________________________________________________" << endl;
-	cout << endl;
+	cout << " ___________________________________________________________________________________________________________________________________________________________________________________________________" << endl;
 	cout << endl << endl;
 	cout << "          Presione cualquier tecla para continuar...";
 	_getch();
@@ -100,6 +99,7 @@ int VerTickets(int lnNumTicket){
 	return 0;
 }
 
+//Función normal.
 int main(){
 	//Permite imprimir tildes, ñ o caracteres especiales. 
 	setlocale(LC_ALL, "");
@@ -154,9 +154,8 @@ int main(){
 				
 				//Inicializando variable.
 				lnTickets = 0;
-			}	
-			
+			}
 		}
-	}			
+	}
 	return 0;
 }
