@@ -154,8 +154,56 @@ int main(){
 				
 				//Inicializando variable.
 				lnTickets = 0;
+	 		
+				//Ciclo
+				do{
+					//Menú de opciones.
+					cout << endl;
+					cout << "     1. Subir un ticket" << endl;
+					cout << "     2. Ver tickets" << endl;
+					cout << "     3. Salir" << endl << endl;
+					
+					//Captura y lectura de datos.
+					cout << " Ingrese una opción: ";
+					cin >> lnOpcion;
+					
+					//Menú desplegable según condición.
+					switch (lnOpcion){
+						case 1: 
+							AbrirTicket(lnTickets);
+							lnTickets = lnTickets + 1;
+						break;
+						case 2: 
+							VerTickets(lnTickets);
+						break;
+						case 3: 
+							//Saliendo del ciclo.
+						break; 
+						default: 
+							cout << " La opción ingresada no es válida... Por favor, intente de nuevo.";
+							Sleep(1000); 
+						break;
+					}
+					//Limpiando pantalla.
+					system("cls");
+					
+				} while (lnOpcion != 3);
+				
+				//Fecha de salida.
+				cout << endl << endl;
+				printf("— Fecha y hora de salida: %s", ctime(&ldFecha)); 
+				cout << endl << endl;
 			}
+		}	
+		else {
+			cout << " ¡Advertencia! Usted no mantiene una matrícula activa." << endl << endl;
 		}
-	}
+		//Pausa + Limpiando pantalla + enter para continuar. 
+		cout << endl;
+		cout << "          Presione cualquier tecla para continuar...";
+		_getch();
+		system("cls");
+	} while (lcOpcion == "1" || lcOpcion == "si" || lcOpcion == "Si");
+	
 	return 0;
 }
